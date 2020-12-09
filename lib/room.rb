@@ -19,4 +19,5 @@ class Room
   def paint
     @is_painted = true
   end
+  
 end
