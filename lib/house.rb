@@ -29,4 +29,8 @@ class House
     end
   end
 
+  def details
+    {"price" => @price, "address" => @address}
+  end
+
 end
