@@ -13,4 +13,8 @@ class House
     @rooms << room
   end
 
+  def above_market_average?
+    @price > 500000
+  end
+
 end
