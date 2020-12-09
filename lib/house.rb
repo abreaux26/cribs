@@ -38,7 +38,21 @@ class House
   end
 
   def rooms_sorted_by_area
-    @rooms.sort { |room| room.area }
+    @rooms.sort do |room|
+      room.area
+    end
+  end
+
+  def rooms_by_category
+    rooms_hash = {}
+
+    categories = rooms_sorted_by_area.map {|room| room.category}.uniq
+
+    categories.each do |category|
+      rooms_hash[category] = rooms_from_category(category)
+    end
+
+    rooms_hash
   end
 
 end
