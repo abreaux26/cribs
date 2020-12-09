@@ -38,9 +38,7 @@ class House
   end
 
   def rooms_sorted_by_area
-    @rooms.sort do |room|
-      room.area
-    end
+    @rooms.sort { |room| room.area }
   end
 
   def rooms_by_category
