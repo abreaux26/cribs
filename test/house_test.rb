@@ -44,7 +44,7 @@ class HouseTest < Minitest::Test
   end
 
   def test_rooms_from_category
-    house = House.new("$600000", "123 sugar lane")
+    house = House.new("$400000", "123 sugar lane")
 
     room_1 = Room.new(:bedroom, 10, '13')
     room_2 = Room.new(:bedroom, 11, '15')
@@ -62,7 +62,7 @@ class HouseTest < Minitest::Test
   end
 
   def test_area
-    house = House.new("$600000", "123 sugar lane")
+    house = House.new("$400000", "123 sugar lane")
 
     room_1 = Room.new(:bedroom, 10, '13')
     room_2 = Room.new(:bedroom, 11, '15')
@@ -75,5 +75,13 @@ class HouseTest < Minitest::Test
     house.add_room(room_4)
 
     assert_equal 1900, house.area
+  end
+
+  def test_details
+    house = House.new("$400000", "123 sugar lane")
+
+    details_hash = {"price" => 400000, "address" => "123 sugar lane"}
+
+    assert_equal details_hash, house.details
   end
 end
