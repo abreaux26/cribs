@@ -4,7 +4,7 @@ class House
               :rooms
 
   def initialize(price, address)
-    @price = price
+    @price = price.gsub('$','').to_i
     @address = address
     @rooms = []
   end
@@ -12,5 +12,5 @@ class House
   def add_room(room)
     @rooms << room
   end
-  
+
 end
